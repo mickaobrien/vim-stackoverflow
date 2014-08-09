@@ -35,16 +35,18 @@ function! stackoverflow#StackOverflow(query)
     let winnum = bufwinnr('^__StackOverflow__')
     if (winnum >= 0)
         execute winnum . 'wincmd w'
-        let ftype = split(bufname('%'), '__')[-1]
-    else
-        let ftype = b:current_syntax
-        let bufname = '__StackOverflow__' . ftype
-        execute 'belowright 10split ' . bufname
-        setlocal buftype=nofile
-        setlocal nonumber
-        "Map o to toggle fold open/close
-        nnoremap <buffer> o zak<cr>
+        normal! q
+        "let ftype = split(bufname('%'), '__')[-1]
     endif
+    "else
+    let ftype = b:current_syntax
+    let bufname = '__StackOverflow__' . ftype
+    execute 'belowright 10split ' . bufname
+    setlocal buftype=nofile
+    setlocal nonumber
+    "Map o to toggle fold open/close
+    nnoremap <buffer> o zak<cr>
+    "endif
     normal! ggdG
 
     silent echom 'Searching for ' . query
@@ -159,8 +161,10 @@ for i, q in enumerate(questions):
 
 
 EOF
-" Here the python code is closed. We can continue writing VimL or python again.
-    call TextEnableCodeSnip(ftype, '<CODE>', '</CODE>', 'SpecialComment')
+    if exists(ftype)
+        call TextEnableCodeSnip(ftype, '<CODE>', '</CODE>', 'SpecialComment')
+    endif
+
     call SetFolds()
 endfunction
 
