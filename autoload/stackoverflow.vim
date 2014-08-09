@@ -34,8 +34,8 @@ function! stackoverflow#StackOverflow(query)
 
     let winnum = bufwinnr('^__StackOverflow__')
     if (winnum >= 0)
-        execute winnum . 'wincmd w'
-        normal! q
+        "execute winnum . 'wincmd w'
+        execute winnum . 'wincmd c'
         "let ftype = split(bufname('%'), '__')[-1]
     endif
     "else
