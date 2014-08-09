@@ -122,7 +122,7 @@ def clean_html(html):
         r'</?blockquote>': '',
         r'<pre.*?>': '<CODE>\n',
         '</pre>': '</CODE>',
-        r'</?ul>': '',
+        r'</?ul>\n': '',
         r'<li>(.*?)</li>': r'* \1',
         r'<a href="(.*?)".*?>(.*?)</a>': r'[\2](\1)',
         '&quot;' : '"',
