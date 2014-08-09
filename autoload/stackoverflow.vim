@@ -134,7 +134,6 @@ def clean_html(html):
 
     for code in codes:
         html = re.sub(code, codes[code], html)
-        #html = html.replace(code, codes[code])
 
     #TODO move encoding somewhere else!
     return html.encode('latin1', errors='ignore')
