@@ -1,0 +1,25 @@
+*stackoverflow.txt*    Plugin for querying Stack Overflow from vim.
+
+==============================================================================
+INTRODUCTION
+
+vim-stackoverflow allows you to query Stack Overflow directly from vim.
+
+==============================================================================
+COMMANDS
+
+vim-stackoverflow adds one command, StackOverflow. It is called as follows:
+
+:StackOverflow 'query string'   Search Stack Overflow for 'query string' and
+                                display the results in a window below. Toggle
+                                the folded questions with o.
+
+==============================================================================
+CHANGELOG
+
+v0.1.0
+    * It works. Pretty much.
+
+==============================================================================
+
+vim:ts=4:et:ft=help:
