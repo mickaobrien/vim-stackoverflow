@@ -114,11 +114,12 @@ def get_content(url):
         print e
 
 def clean_html(html):
-#TODO h1 etc., blockquote
     codes = {
         r'</?p>': '',
+        r'<h\d>(.*?)</h\d>': r'\1',
         r'</?strong>': '',
         r'</?code>': '',
+        r'</?blockquote>': '',
         r'<pre.*?>': '<CODE>\n',
         '</pre>': '</CODE>',
         r'</?ul>': '',
