@@ -24,7 +24,7 @@ function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
     \ contains=@'.group
 endfunction
 
-function! StackOverflow(query)
+function! stackoverflow#StackOverflow(query)
 
     let query=a:query
 
