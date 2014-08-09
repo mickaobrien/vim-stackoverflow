@@ -3,7 +3,7 @@ if !has('python')
     finish
 endif
 
-command! -nargs=1 StackExchange call StackEx(<f-args>)
+command! -nargs=1 StackOverflow call StackOverflow(<f-args>)
 
 function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
     " Taken from http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
@@ -39,13 +39,13 @@ function! StackEx(query)
         let ftype=b:current_syntax
     endif
 
-    let winnum = bufwinnr('^__StackExchange__')
+    let winnum = bufwinnr('^__StackOverflow__')
     if (winnum >= 0)
         execute winnum . 'wincmd w'
         let ftype = split(bufname('%'), '__')[-1]
     else
         let ftype = b:current_syntax
-        let bufname = '__StackExchange__' . ftype
+        let bufname = '__StackOverflow__' . ftype
         execute 'belowright 10split ' . bufname
         setlocal buftype=nofile
         setlocal nonumber
