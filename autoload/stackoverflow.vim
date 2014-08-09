@@ -28,14 +28,14 @@ function! stackoverflow#StackOverflow(query)
 
     let query=a:query
 
-    if exists('b:current_syntax')
-        let ftype=b:current_syntax
-    endif
+    "if exists('b:current_syntax')
+        "let ftype=b:current_syntax
+    "endif
 
     let winnum = bufwinnr('^__StackOverflow__')
     if (winnum >= 0)
-        execute winnum . 'wincmd w'
-        normal! q
+        execute winnum . 'wincmd c'
+        "normal! q
         "let ftype = split(bufname('%'), '__')[-1]
     endif
     "else
@@ -161,10 +161,7 @@ for i, q in enumerate(questions):
 
 
 EOF
-    if exists(ftype)
-        call TextEnableCodeSnip(ftype, '<CODE>', '</CODE>', 'SpecialComment')
-    endif
-
+    call TextEnableCodeSnip(ftype, '<CODE>', '</CODE>', 'SpecialComment')
     call SetFolds()
 endfunction
 
