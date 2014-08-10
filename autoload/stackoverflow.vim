@@ -161,9 +161,9 @@ for i, q in enumerate(questions):
 
 
 EOF
-    if exists(ftype)
-        call TextEnableCodeSnip(ftype, '<CODE>', '</CODE>', 'SpecialComment')
-    endif
+    "if exists(ftype)
+    call TextEnableCodeSnip(ftype, '<CODE>', '</CODE>', 'SpecialComment')
+    "endif
 
     call SetFolds()
 endfunction
