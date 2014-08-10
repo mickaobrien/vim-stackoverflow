@@ -175,6 +175,11 @@ function! MarkdownFolds()
   endif
 endfunction
 
+function! SetLineWidth()
+    setlocal textwidth=79
+    normal! gggqG
+endfunction
+
 function! MarkdownFoldText()
   let foldsize = (v:foldend-v:foldstart)
   return getline(v:foldstart)
