@@ -118,6 +118,9 @@ def get_content(url):
 def clean_html(html):
     codes = {
         r'</?p>': '',
+        r'</?b>': '',
+        r'</?em>': '',
+        '<br>': '',
         r'<h\d>(.*?)</h\d>': r'\1',
         r'</?strong>': '',
         r'</?code>': '',
