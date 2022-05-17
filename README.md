@@ -5,7 +5,7 @@ A vim plugin that allows you to search Stack Overflow right from vim.
 Requires vim compiled with python support. You can check this by running ``vim
 --version | grep +python`` - if something is returned, you're good to go.
 
-##Installation
+## Installation
 
 Use your plugin manager of choice.
 
