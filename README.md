@@ -21,7 +21,7 @@ Use your plugin manager of choice.
   - Add `Plug 'https://github.com/mickaobrien/vim-stackoverflow'` to .vimrc
   - Run `:PlugInstall`
 
-##Usage
+## Usage
 The plugin adds one command, ``:StackOverflow``. It can be called as follows
 
 ``:StackOverflow 'query'``
